@@ -12,7 +12,7 @@ A series of personal projects/products using the brand name JTM-Network. The aim
 ### Languages:
 - [Java](https://www.java.com/en)
 - [Kotlin](https://kotlinlang.org)
-- [Javascript](https://www.javascript.com)
+- [JavaScript](https://www.javascript.com)
 
 ### Frameworks:
 - [Spring Boot](https://spring.io/projects/spring-boot)
