@@ -1,12 +1,37 @@
 # Introduction
 
-<!--
+A series of personal projects/products using the brand name JTM-Network. The aim of these projects is to solve business problems, using microservice architecture, to split the problems into sub-problems and to be integrated into the Kubernetes Cluster without affecting current processes & offers scalability. Most services used in the Network are public as to show how we solve these problems.
 
-**Here are some ideas to get you started:**
+## Table contents
+- [Technologies](#technologies)
+- [FAQ](#faq)
+- [Flow logic](#flow-logic)
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+## Technologies
+
+### Languages:
+- [Java](https://www.java.com/en)
+- [Kotlin](https://kotlinlang.org)
+- [Javascript](https://www.javascript.com)
+
+### Frameworks:
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Spring Webflux](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
+- [VueJS](https://vuejs.org/)
+- [NuxtJS](https://nuxtjs.org/)
+
+### Dev Ops:
+- [Docker](https://www.docker.com/)
+- [Kubernetes](https://kubernetes.io/)
+- [Github Actions](https://github.com/features/actions)
+- [Google Cloud Platform](https://cloud.google.com/)
+
+### Databases:
+- [MongoDB](https://www.mongodb.com/)
+- [Cassandra](https://cassandra.apache.org/_/index.html)
+- [Redis](https://redis.io/)
+- [SQL](https://en.wikipedia.org/wiki/SQL)
+
+## FAQ
+
+## Flow logic
