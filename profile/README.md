@@ -38,13 +38,12 @@ A series of personal projects/products using the brand name JTM-Network. The aim
 
 ### Stripe Premium Plugin Payment Intent Flow:
 
-Request Endpoint: /payment/intent/plugin\
 Request Header: Authorization: Bearer $token\
 Request Body: { total: Double, currency: String, plugins: List<UUID> }
 
 ```mermaid
 flowchart LR
-    client(Client) -->| /payment/intent/plugin |auth(Auth0 Gateway)
+    client(Client) -->| plugin intent endpoint |auth(Auth0 Gateway)
     auth -->| Look at 1.1 | payment(Payment Service)
     payment --> | Look at 1.2 | secret(Return intent secret)
     secret --> client
@@ -58,13 +57,12 @@ flowchart LR
 - Return the intent secret to the client to be used to complete the payment.
 
 ### Stripe Payment Completion Webhook Flow:
-
-Request Endpint: /profile/plugin/access/hook\
+    
 Request Header: Stripe-Signature\
 Request Body: Stripe Event
 ```mermaid
 flowchart LR
-    stripe(Stripe Hook Request) --> | /profile/plugin/access/hook |auth(Auth0 Gateway)
+    stripe(Stripe Hook Request) --> | plugin access hook endpoint |auth(Auth0 Gateway)
     auth --> | Look at 1.3 |profile(Profile Service)
     profile --> stripe
 ```
