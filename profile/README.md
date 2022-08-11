@@ -35,3 +35,27 @@ A series of personal projects/products using the brand name JTM-Network. The aim
 ## FAQ
 
 ## Flow logic
+
+### Premium Plugin Payment Flow:
+
+Request Endpoint: /payment/intent/plugin\
+Request Header: Authorization: Bearer $token\
+Request Body: { total: Double, currency: String, plugins: List<UUID> }
+
+```mermaid
+flowchart LR
+    client(Client) -->| /payment/intent/plugin |auth(Auth0 Gateway)
+    auth -->| Look at 1.1 | payment(Payment Service)
+    payment --> | Look at 1.2 | secret(Return intent secret)
+    secret --> client
+```
+
+1.1.
+- Uses Bearer token to get client info from Auth0 Management Server.
+- Add header CLIENT_ID with client identifier and forward to payment service.
+
+1.2.
+- Use the client id and request body to create a payment intent.
+- Return the intent secret to the client to be used to complete the payment.
+
+
