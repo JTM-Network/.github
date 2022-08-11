@@ -60,9 +60,8 @@ flowchart LR
 ### Stripe Payment Completion Webhook Flow:
 
 Request Endpint: /profile/plugin/access/hook\
-Request Header: Stripe-Signature
+Request Header: Stripe-Signature\
 Request Body: Stripe Event
-
 ```mermaid
 flowchart LR
     stripe(Stripe Hook Request) --> | /profile/plugin/access/hook |auth(Auth0 Gateway)
