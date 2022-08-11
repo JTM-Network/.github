@@ -36,7 +36,7 @@ A series of personal projects/products using the brand name JTM-Network. The aim
 
 ## Flow logic
 
-### Premium Plugin Payment Flow:
+### Stripe Premium Plugin Payment Intent Flow:
 
 Request Endpoint: /payment/intent/plugin\
 Request Header: Authorization: Bearer $token\
@@ -49,7 +49,6 @@ flowchart LR
     payment --> | Look at 1.2 | secret(Return intent secret)
     secret --> client
 ```
-
 1.1.
 - Uses Bearer token to get client info from Auth0 Management Server.
 - Add header CLIENT_ID with client identifier and forward to payment service.
@@ -58,4 +57,19 @@ flowchart LR
 - Use the client id and request body to create a payment intent.
 - Return the intent secret to the client to be used to complete the payment.
 
+### Stripe Payment Completion Webhook Flow:
+
+Request Endpint: /profile/plugin/access/hook\
+Request Header: Stripe-Signature
+Request Body: Stripe Event
+
+```mermaid
+flowchart LR
+    stripe(Stripe Hook Request) --> | /profile/plugin/access/hook |auth(Auth0 Gateway)
+    auth --> | Look at 1.3 |profile(Profile Service)
+    profile --> stripe
+```
+1.3.
+- Auth0 Gateway service will check the endpoint is registered and authenticate the Stripe-Signature header.
+- If the Stripe-Signature is validated forward the endpoint secret to the profile service to construct the stripe event object.
 
