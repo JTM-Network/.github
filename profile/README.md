@@ -43,7 +43,7 @@ Request Body: { total: Double, currency: String, plugins: List<UUID> }
 
 ```mermaid
 flowchart LR
-    client(Client) -->| plugin intent endpoint |auth(Auth0 Gateway)
+    client(Client) -->| /intent |auth(Auth0 Gateway)
     auth -->| Look at 1.1 | payment(Payment Service)
     payment --> | Look at 1.2 | secret(Return intent secret)
     secret --> client
@@ -62,7 +62,7 @@ Request Header: Stripe-Signature\
 Request Body: Stripe Event
 ```mermaid
 flowchart LR
-    stripe(Stripe Hook Request) --> | plugin access hook endpoint |auth(Auth0 Gateway)
+    stripe(Stripe Hook Request) --> | /profile/hook |auth(Auth0 Gateway)
     auth --> | Look at 1.3 |profile(Profile Service)
     profile --> stripe
 ```
