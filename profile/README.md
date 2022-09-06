@@ -4,8 +4,7 @@ A series of personal projects/products using the brand name JTM-Network. The aim
 
 ## Table contents
 - [Technologies](#technologies)
-- [FAQ](#faq)
-- [Flow logic](#flow-logic)
+- [Preliminary Questions](#premliminary-questions)
 
 ## Technologies
 
@@ -32,41 +31,12 @@ A series of personal projects/products using the brand name JTM-Network. The aim
 - [Redis](https://redis.io/)
 - [SQL](https://en.wikipedia.org/wiki/SQL)
 
-## FAQ
+## Preliminary Questions
 
-## Flow logic
+### Why do you use Kotlin for most of your microservices instead of Java?
 
-### Stripe Premium Plugin Payment Intent Flow:
+There aren't many differences between the languages other than Kotlin being more functional and less verbose, and those are big reasons in why I choose Kotlin. From experience I was writing 25-35% less lines of code for the same feature due to writing less words, and the logic are transferable OOP paradigms are transferable between languages, which make it a great language to use for speedy development. IntelliJ also offers a way to convert Kotlin code to Java code and vice versa, which makes it very versatile to use. Consider Kotlin as the Python language for the JVM.
 
-Request Header: Authorization: Bearer $token\
-Request Body: { total: Double, currency: String, plugins: List<UUID> }
 
-```mermaid
-flowchart LR
-    client(Client) -->| /intent |auth(Auth0 Gateway)
-    auth -->| Look at 1.1 | payment(Payment Service)
-    payment --> | Look at 1.2 | secret(Return intent secret)
-    secret --> client
-```
-1.1.
-- Uses Bearer token to get client info from Auth0 Management Server.
-- Add header CLIENT_ID with client identifier and forward to payment service.
 
-1.2.
-- Use the client id and request body to create a payment intent.
-- Return the intent secret to the client to be used to complete the payment.
-
-### Stripe Payment Completion Webhook Flow:
-    
-Request Header: Stripe-Signature\
-Request Body: Stripe Event
-```mermaid
-flowchart LR
-    stripe(Stripe Hook Request) --> | /profile/hook |auth(Auth0 Gateway)
-    auth --> | Look at 1.3 |profile(Profile Service)
-    profile --> stripe
-```
-1.3.
-- Auth0 Gateway service will check the endpoint is registered and authenticate the Stripe-Signature header.
-- If the Stripe-Signature is validated forward the endpoint secret to the profile service to construct the stripe event object.
 
