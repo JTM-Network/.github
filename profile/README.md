@@ -4,7 +4,7 @@ A series of personal projects/products using the brand name JTM-Network. The aim
 
 ## Table contents
 - [Technologies](#technologies)
-- [Preliminary Questions](#premliminary-questions)
+- [Preliminary Questions](#preliminary-questions)
 
 ## Technologies
 
