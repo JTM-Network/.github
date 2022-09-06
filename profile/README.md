@@ -35,7 +35,7 @@ A series of personal projects/products using the brand name JTM-Network. The aim
 
 #### Why do you use Kotlin for most of your microservices instead of Java?
 
-There aren't many differences between the languages other than Kotlin being more functional and less verbose, and those are big reasons why I chose Kotlin. From experience I was writing 25-35% less lines of code in Kotlin than in Java for the same feature due to writing less words. With the knowledge of Design Patterns, OOP paradigms & SOLID principles being transferable, makes Kotlin a great language to use for faster development. IntelliJ also offers a way to convert Kotlin code to Java code and vice versa, which makes it very versatile to use in current Java projects.
+There aren't many differences between the languages other than Kotlin being more functional and less verbose, and those are big reasons why I chose Kotlin. From experience I was writing 25-35% less lines of code in Kotlin than in Java for the same feature due to writing less words. With the knowledge of Design Patterns, OOP paradigms & SOLID principles being transferable, it makes Kotlin a great language to use for faster development. IntelliJ also offers a way to convert Kotlin code to Java code and vice versa, which makes it very versatile to use in current Java projects.
 
 
 
