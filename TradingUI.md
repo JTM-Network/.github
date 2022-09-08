@@ -1,5 +1,5 @@
 # Introduction
-Client requested a desktop application, which provided low latency trading with custom features for their needs. To complete this project I had to research encryption methods based on the strict requirements of the API, and provide a constant connection to the server while handling disconnects/errors smoothly as to not disrupt the clients trading experience. Key features that needed to be implemented:
+Client requested a desktop application, which provided low latency trading with custom features for their needs. To complete this project I had to research encryption methods based on the strict requirements of the API, and provide a constant connection to the server while handling disconnects/errors smoothly, creating a robust system to not disrupt the clients trading experience. Key features that needed to be implemented:
 
 - Limit Orders
   - Be able to buy and sell at a certain price in the market. 
